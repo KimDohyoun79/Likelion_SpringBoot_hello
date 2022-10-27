@@ -7,8 +7,9 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/get-api")
-public class HelloController {
+public class GetController {
 
+    //http://localhost:8080/api/v1/get-api/hello
     // 기본적인 메소드 작성법과 다른 메소드 작성법
     //@RequestMapping(value = "/hello", method = RequestMethod.GET) // 고전적인 방법
     @GetMapping("/hello") // 다른 메소드 작성법
