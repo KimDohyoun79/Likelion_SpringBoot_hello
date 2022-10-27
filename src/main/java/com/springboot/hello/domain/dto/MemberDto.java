@@ -23,8 +23,17 @@ public class MemberDto {
         return organizaion;
     }
 
+//    @Override
+//    public String toString(){
+//        return String.format("%s %s %s", this.name, this.email, this.organizaion);
+//    }
+
     @Override
-    public String toString(){
-        return String.format("%s %s %s", this.name, this.email, this.organizaion);
+    public String toString() {
+        return "MemberDto{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", organizaion='" + organizaion + '\'' +
+                '}';
     }
 }
