@@ -1,12 +1,14 @@
 package com.springboot.hello.controller;
 
 import com.springboot.hello.domain.dto.MemberDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/get-api")
+@Slf4j
 public class GetController {
 
     //http://localhost:8080/api/v1/get-api/hello
@@ -14,6 +16,7 @@ public class GetController {
     //@RequestMapping(value = "/hello", method = RequestMethod.GET) // 고전적인 방법
     @GetMapping("/hello") // 다른 메소드 작성법
     public String hello() {
+        log.info("hello로 요청이 들어왔습니다.");
         return "Hello World";
     }
 
@@ -23,6 +26,7 @@ public class GetController {
     // /api/v1/get-api/name
     @GetMapping(value = "/name")
     public String getName() {
+        log.info("geName로 요청이 들어왔습니다.");
         return "dokim";
     }
 
@@ -33,6 +37,7 @@ public class GetController {
     // URL변수명과 파라미터 변수명 일치
     @GetMapping(value = "/variable1/{variable}") // 밑의 String 변수 이름과 같아야 한다.
     public String getVariable1(@PathVariable String variable) {
+        log.info("getVariable1으로 요청이 들어왔습니다. variable:{}", variable);
         return variable;
     }
 
