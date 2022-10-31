@@ -18,7 +18,7 @@ public class HospitalParser implements Parser<Hospital> {
         int year = Integer.parseInt(row[5].substring(0, 4));
         int month = Integer.parseInt(row[5].substring(4, 6));
         int day = Integer.parseInt(row[5].substring(6, 8));
-        System.out.printf("%d %d %d \n", year, month, day);
+        //System.out.printf("%d %d %d \n", year, month, day);
         hospital.setLicenseDate(LocalDateTime.of(year, month, day, 0, 0, 0));
         hospital.setBusinessStatus(Integer.parseInt(row[7]));
         hospital.setBusinessStatusCode(Integer.parseInt(row[9]));
