@@ -28,8 +28,8 @@ public class UserController {
 
     @GetMapping("/user")
     public User addAndGet() throws SQLException {
-        userDao.add(new User("1", "Kyeongrok", "1234"));
-        return userDao.findById("1");
+        userDao.add(new User("3", "dokim", "1234"));
+        return userDao.findById("3");
     }
 
     @DeleteMapping("/user")
