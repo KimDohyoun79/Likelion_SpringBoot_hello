@@ -6,10 +6,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ParserFactory {
-
     @Bean
     public ReadLineContext2<Hospital> hospitalReadLineContext(){
         return new ReadLineContext2<Hospital>(new HospitalParser());
     }
-
 }

@@ -30,6 +30,4 @@ public class ReadLineContext2<T>{
         reader.close();
         return result;
     }
-
-
 }
