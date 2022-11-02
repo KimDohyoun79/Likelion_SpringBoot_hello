@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.io.IOException;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
@@ -26,12 +27,23 @@ class HelloApplicationTests {
     HospitalDao hospitalDao;
 
     @Test
+    @DisplayName("getCount가 잘 되는지")
+    void getCount(){
+        hospitalDao.getCount();
+    }
+
+    @Test
     @DisplayName("insert가 잘 되는지")
-    void add(){
+    void addAndGet(){
+        hospitalDao.deleteAll();
+        assertEquals(0, hospitalDao.getCount());
         HospitalParser hp = new HospitalParser();
         Hospital hospital = hp.parse(line1);
-        System.out.println("왜 안되냥"+ hospital.toString());
         hospitalDao.add(hospital);
+        assertEquals(1, hospitalDao.getCount());
+        //findById
+        Hospital selectedHospital = hospitalDao.findById(hospital.getId());
+        assertEquals(selectedHospital.getId(), hospital.getId());
     }
 
     @Test
@@ -48,7 +60,5 @@ class HelloApplicationTests {
         }
         System.out.printf("파싱된 데이터 개수:", hospitalList.size());
     }
-
-
 
 }
